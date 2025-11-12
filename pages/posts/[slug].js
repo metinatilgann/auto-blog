@@ -2,9 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import Layout from '../../components/Layout';
 
 export async function getStaticPaths() {
   const postsDir = path.join(process.cwd(), 'posts');
+  if (!fs.existsSync(postsDir)) return { paths: [], fallback: false };
   const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
   const paths = files.map(fn => ({ params: { slug: fn.replace(/\.md$/, '') } }));
   return { paths, fallback: false };
@@ -19,13 +21,18 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ front, html }) {
   return (
-    <main style={{maxWidth:800, margin:'40px auto', padding:'0 16px', fontFamily:'system-ui, -apple-system, Segoe UI, Roboto'}}>
-      <a href="/">← Home</a>
-      <h1>{front.title}</h1>
-      <small>{new Date(front.date).toLocaleString()}</small>
-      {front.image && <div style={{marginTop:8}}><img src={front.image} alt="" style={{maxWidth:'100%'}}/></div>}
-      <article dangerouslySetInnerHTML={{ __html: html }} />
-      {front.source && <p><em>Kaynak: <a href={front.source} target="_blank" rel="nofollow noopener">{front.source_title || front.source}</a></em></p>}
-    </main>
+    <Layout>
+      <article className="prose-custom">
+        <h1 className="font-display">{front.title}</h1>
+        <p className="meta">{new Date(front.date).toLocaleString('tr-TR')}</p>
+        {front.image && <img src={front.image} alt="" />}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        {front.source && (
+          <p className="meta">
+            Kaynak: <a href={front.source} target="_blank" rel="nofollow noopener">{front.source_title || front.source}</a>
+          </p>
+        )}
+      </article>
+    </Layout>
   );
 }
