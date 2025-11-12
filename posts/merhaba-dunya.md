@@ -7,4 +7,4 @@ source_title: "Örnek"
 excerpt: "Bu bir test yazısıdır."
 ---
 
-Bu yazı, sistemin çalıştığını test etmek içindir. 🎉
+Bu yazı, sistemin çalıştığını test etmek içindiir. 🎉
