@@ -42,12 +42,14 @@ jobs:
 
       - name: Commit & push
         run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
+          # Sadece posts/ altındaki değişiklikleri kontrol et
+          if [[ -n "$(git status --porcelain posts)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
+            # Sadece posts/ klasörünü ekle
+            git add posts
             git commit -m "chore: auto-generate posts"
             git push
           else
-            echo "No changes."
+            echo "No changes in posts/"
           fi
