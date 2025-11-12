@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basit tema dokunuşları */
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
+
+.container-main {
+  @apply max-w-3xl mx-auto px-4 py-8;
+}
+.card {
+  @apply bg-white dark:bg-neutral-900 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-800 p-5;
+}
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition;
+}
+.meta {
+  @apply text-sm text-neutral-500 dark:text-neutral-400;
+}
+.prose-custom {
+  @apply prose dark:prose-invert max-w-none prose-img:rounded-xl;
+}
