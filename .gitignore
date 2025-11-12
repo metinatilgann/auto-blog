@@ -1,0 +1,16 @@
+# build / cache
+.next/
+out/
+dist/
+.cache/
+
+# paketler
+node_modules/
+
+# env & logs
+.env
+*.log
+
+# os
+.DS_Store
+Thumbs.db
