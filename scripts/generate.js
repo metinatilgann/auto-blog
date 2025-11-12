@@ -12,7 +12,17 @@ import axios from 'axios';
 const FEEDS = [
   'https://www.theverge.com/rss/index.xml',
   'https://techcrunch.com/feed/',
-  'https://hnrss.org/frontpage'
+  'https://hnrss.org/frontpage',
+  'https://technology.org/feed/',
+  'https://gamerant.com/feed/',
+  'https://www.pcworld.com/feed/',
+  'https://www.pcgamer.com/feeds.xml',
+  'https://mashable.com/feeds/rss/all',
+  'https://feeds.feedburner.com/Gizmodo',
+  'https://arstechnica.com/feed/',
+  'https://www.webtekno.com/rss',
+  'https://shiftdelete.net/feed'
+  
 ];
 
 const MAX_POSTS = parseInt(process.env.MAX_POSTS || '3', 10);
