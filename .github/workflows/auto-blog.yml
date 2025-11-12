@@ -20,12 +20,25 @@ jobs:
       - name: Install deps
         run: npm install --no-audit --no-fund
 
+      - name: Show env & tree (before)
+        run: |
+          node -v
+          echo "HF token set? ${{ secrets.HUGGINGFACE_TOKEN != '' }}"
+          echo "Pexels set? ${{ secrets.PEXELS_API_KEY != '' }}"
+          ls -la
+          ls -la posts || echo "posts/ yok"
+
       - name: Generate posts
         env:
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           MAX_POSTS: 3
         run: npm run generate
+
+      - name: Show tree (after)
+        run: |
+          git status
+          ls -la posts || echo "posts/ yok veya boş"
 
       - name: Commit & push
         run: |
