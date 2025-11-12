@@ -24,7 +24,7 @@ jobs:
         env:
           HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          MAX_POSTS: 3
+          MAX_POSTS: 10
         run: npm run generate
 
       - name: Commit & push
