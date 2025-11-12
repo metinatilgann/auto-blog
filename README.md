@@ -12,4 +12,4 @@
    - `HUGGINGFACE_TOKEN` (optional but recommended)
    - `PEXELS_API_KEY` (optional)
 3. Enable GitHub Pages or deploy to **Vercel** (recommended).
-4. The workflow runs daily at 08:00 UTC or via **Run workflow** button.
+4. The workflow  runs daily at 08:00 UTC or via **Run workflow** button.
