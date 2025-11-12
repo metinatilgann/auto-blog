@@ -10,19 +10,18 @@ import slugify from 'slugify';
 import axios from 'axios';
 
 const FEEDS = [
+   'https://techcrunch.com/feed/',
   'https://www.theverge.com/rss/index.xml',
-  'https://techcrunch.com/feed/',
-  'https://hnrss.org/frontpage',
-  'https://technology.org/feed/',
-  'https://gamerant.com/feed/',
-  'https://www.pcworld.com/feed/',
-  'https://www.pcgamer.com/feeds.xml',
-  'https://mashable.com/feeds/rss/all',
-  'https://feeds.feedburner.com/Gizmodo',
+  'https://www.engadget.com/rss.xml',
+  'https://www.wired.com/feed/rss',
   'https://arstechnica.com/feed/',
+  'https://thenextweb.com/feed',
+  'https://www.cnet.com/rss/news/',
+  'https://feeds.feedburner.com/Gizmodo',
+  'https://mashable.com/feeds/rss/all',
   'https://www.webtekno.com/rss',
-  'https://shiftdelete.net/feed'
-  
+  'https://shiftdelete.net/feed',
+  'https://www.trthaber.com/xml_mobile.php?kat=bilim_teknoloji'  
 ];
 
 const MAX_POSTS = parseInt(process.env.MAX_POSTS || '3', 10);
