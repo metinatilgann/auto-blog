@@ -53,3 +53,11 @@ jobs:
           else
             echo "No changes in posts/"
           fi
+      - name: Trigger Vercel Deploy Hook
+        if: always()
+        run: |
+          if [ -n "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
+            curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+          else
+            echo "No VERCEL_DEPLOY_HOOK secret set."
+          fi
