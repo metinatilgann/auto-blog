@@ -19,11 +19,6 @@ const FEEDS = [
   'https://feeds.feedburner.com/Gizmodo',
   'https://mashable.com/feeds/rss/all',
   'https://www.webtekno.com/rss',
-  'https://www.memurlar.net/siteneekle/',
-  'https://www.kamugundemi.com/rss/',
-  'https://www.kamudanhaber.net/rss',
-  'mebhaberler.com/rss.html',
-  'https://www.ntv.com.tr/rss'
 ];
 
 const MAX_POSTS = parseInt(process.env.MAX_POSTS || '3', 10);
